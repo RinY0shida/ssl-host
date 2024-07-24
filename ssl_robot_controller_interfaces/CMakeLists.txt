@@ -11,6 +11,14 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+set(msg_files
+  "action/RobotControl.action"
+)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
