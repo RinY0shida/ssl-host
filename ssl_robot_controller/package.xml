@@ -5,12 +5,18 @@
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="tororo1219@gmail.com">RinYoshida</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <build_depend>ament_cmake_auto</build_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
+  <depend>robocup_ssl_msgs</depend>
+  <depend>ssl_robot_controller_interfaces</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
