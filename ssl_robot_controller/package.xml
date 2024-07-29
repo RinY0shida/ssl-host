@@ -16,6 +16,7 @@
   <depend>rclcpp</depend>
   <depend>rclcpp_action</depend>
   <depend>robocup_ssl_msgs</depend>
+  <depend>rclcpp_components</depend>
   <depend>ssl_robot_controller_interfaces</depend>
 
   <export>

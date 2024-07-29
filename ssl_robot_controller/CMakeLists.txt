@@ -8,13 +8,15 @@ endif()
 # find dependencies
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
 
-ament_auto_add_library(shinobi_robot_controller_node SHARED
+
+ament_auto_add_library(robot_controller_node SHARED
   src/trajectory_control.cc
-  # include/ssl_robot_controller/trajectory_control.h
+)
+
+rclcpp_components_register_nodes(robot_controller_node
+  PLUGIN "ssl_robot_controller::TrajectoryControl"
+  EXECUTABLE trajectory_control_node
 )
 
 if(BUILD_TESTING)
@@ -22,4 +24,6 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-ament_package()
+ament_auto_package(INSTALL_TO_SHARE
+  launch
+)
