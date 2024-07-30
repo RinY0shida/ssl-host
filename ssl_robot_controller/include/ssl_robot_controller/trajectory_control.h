@@ -9,8 +9,9 @@
 #ifndef TRAJECTORY_CONTROL_H
 #define TRAJECTORY_CONTROL_H
 
-#include <rclcpp/rclcpp.hpp>
-#include <rclcpp_action/rclcpp_action.hpp>
+#include "rclcpp/rclcpp.hpp"
+#include "rclcpp_components/register_node_macro.hpp"
+#include "rclcpp_action/rclcpp_action.hpp"
 
 #include "robocup_ssl_msgs/msg/detection_robot.hpp"
 #include "robocup_ssl_msgs/msg/commands.hpp"

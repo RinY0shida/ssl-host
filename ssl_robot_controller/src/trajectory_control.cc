@@ -47,3 +47,5 @@ void TrajectoryControl::TrajectoryControlAcceptedResponse(
 }
 
 } // namespace ssl_robot_controller
+
+RCLCPP_COMPONENTS_REGISTER_NODE(ssl_robot_controller::TrajectoryControl)
