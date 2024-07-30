@@ -1,5 +1,5 @@
 /**
- * @file trajectory_control.h
+ * @file robot_controller_component.h
  * @author RinYoshida (tororo1219@gmail.com)
  * @brief ロボットの軌跡制御のクラスヘッダ
  * @version 0.1
@@ -22,10 +22,10 @@
 namespace ssl_robot_controller
 {
 
-class TrajectoryControl : public rclcpp::Node
+class RobotController : public rclcpp::Node
 {
 public:
-    explicit TrajectoryControl(const rclcpp::NodeOptions & options);
+    explicit RobotController(const rclcpp::NodeOptions & options);
 
 private:
     rclcpp_action::Server<ssl_robot_controller_interfaces::action::TrajectoryControl>::SharedPtr action_server_;

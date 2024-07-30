@@ -11,8 +11,8 @@ def generate_launch_description():
         composable_node_descriptions=[
             ComposableNode(
                 package='ssl_robot_controller',
-                plugin='ssl_robot_controller::TrajectoryControl',
-                name='trajectory_controller',
+                plugin='ssl_robot_controller::RobotController',
+                name='robot_controller_node',
             ),
         ],
         output='screen',

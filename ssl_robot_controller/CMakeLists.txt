@@ -11,12 +11,12 @@ ament_auto_find_build_dependencies()
 
 
 ament_auto_add_library(robot_controller_node SHARED
-  src/trajectory_control.cc
+  src/robot_controller_component.cc
 )
 
 rclcpp_components_register_nodes(robot_controller_node
-  PLUGIN "ssl_robot_controller::TrajectoryControl"
-  EXECUTABLE trajectory_control_node
+  PLUGIN "ssl_robot_controller::RobotController"
+  EXECUTABLE robot_controller_node
 )
 
 if(BUILD_TESTING)
