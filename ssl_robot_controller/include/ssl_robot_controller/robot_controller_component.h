@@ -9,15 +9,13 @@
 #ifndef TRAJECTORY_CONTROL_H
 #define TRAJECTORY_CONTROL_H
 
+#include "trajectory_controller.h"
+
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 
-#include "robocup_ssl_msgs/msg/detection_robot.hpp"
-#include "robocup_ssl_msgs/msg/commands.hpp"
-#include "robocup_ssl_msgs/msg/robot_command.hpp"
 #include "ssl_robot_controller_interfaces/action/trajectory_control.hpp"
-
 
 namespace ssl_robot_controller
 {
@@ -38,6 +36,8 @@ private:
         const std::shared_ptr<rclcpp_action::ServerGoalHandle<ssl_robot_controller_interfaces::action::TrajectoryControl>> goal_handle);
 
     void TrajectoryControlAcceptedResponse(const std::shared_ptr<rclcpp_action::ServerGoalHandle<ssl_robot_controller_interfaces::action::TrajectoryControl>> goal_handle);
+
+    TrajectoryController trajectory_controller;
 };
 
 }  // namespace ssl_robot_controller

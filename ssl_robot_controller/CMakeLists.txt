@@ -12,6 +12,8 @@ ament_auto_find_build_dependencies()
 
 ament_auto_add_library(robot_controller_node SHARED
   src/robot_controller_component.cc
+  src/trajectory_controller.cc
+  include/ssl_robot_controller/trajectory_controller.h
 )
 
 rclcpp_components_register_nodes(robot_controller_node

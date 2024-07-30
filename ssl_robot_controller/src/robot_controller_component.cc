@@ -29,6 +29,7 @@ rclcpp_action::GoalResponse RobotController::TrajectoryControlGoalResponse(
     const rclcpp_action::GoalUUID & uuid,
     [[maybe_unused]]std::shared_ptr<const ssl_robot_controller_interfaces::action::TrajectoryControl::Goal> goal)
 {
+    //trajectory_controller.TrajectoryControl();
     RCLCPP_INFO(this->get_logger(), "Received goal request with order %f", goal->x_axis);
     (void)uuid;
     return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE;
@@ -43,7 +44,9 @@ rclcpp_action::CancelResponse RobotController::TrajectoryControlCancelRsponse(
 void RobotController::TrajectoryControlAcceptedResponse(
     [[maybe_unused]]const std::shared_ptr<rclcpp_action::ServerGoalHandle<ssl_robot_controller_interfaces::action::TrajectoryControl>> goal_handle)
 {
-    //RCLCPP_INFO(this->get_logger(), "Goal has been accepted with order %d", goal_handle->get_goal()->y_axis);
+    RCLCPP_INFO(this->get_logger(), "Goal has been accepted with order %d", goal_handle->get_goal()->y_axis);
+    trajectory_controller.TrajectoryControl();
+    
 }
 
 } // namespace ssl_robot_controller
