@@ -11,6 +11,7 @@
 #include <cstdint>
 #include <mutex>
 #include <memory>
+#include <numbers>
 
 #include "rclcpp/rclcpp.hpp"
 
@@ -32,6 +33,8 @@ private:
     rclcpp::Publisher<robocup_ssl_msgs::msg::Commands>::SharedPtr robot_command_publisher_;
     std::shared_ptr<robocup_ssl_msgs::msg::DetectionRobot> current_odomery_;
     std::mutex *mutex_;
+
+    // const noexcept kHalfPi = std::numbers::pi / 2
 };
 }
 #endif  // TRAJECTORY_CONTROLLER_H
