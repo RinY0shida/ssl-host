@@ -46,6 +46,7 @@ int8_t TrajectoryController::TrajectoryControl(uint8_t robot_id ,int32_t target_
     double theta = atan2(y_vector, x_vector);
     double distance = sqrt(pow(x_vector, 2) + pow(y_vector, 2));
     theta = fsin(theta); // 時計回りに0~π　半時計回りに0~-π
+    if(theta)
     
 
 
@@ -71,6 +72,8 @@ int8_t TrajectoryController::TrajectoryControl(uint8_t robot_id ,int32_t target_
         // 他のフィールドも必要に応じて初期化できます
         message.robot_commands.push_back(command);
         robot_command_publisher_->publish(message);
+
+        
         //RCLCPP::INFO(this->get_logger(), "TrajectoryControl");
     return 0;
 }
